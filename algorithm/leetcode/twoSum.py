@@ -10,7 +10,7 @@ class Solution:
     Because nums[0] + nums[1] = 2 + 7 = 9,
     return [0, 1].
     """
-    def two_sum(self, nums, target):
+    def twoSum(self, nums, target):
         """
         :type nums: List[int]
         :type target: int
@@ -23,8 +23,29 @@ class Solution:
                 if nums[x] == remainder:
                     return [idx, x]
 
+    def twoSum2(self, nums, target):
+        """
+        :type nums: List[int]
+        :type target: int
+        :rtype: List[int]
+        """
+        i = 0
+        j = len(nums)
+        while i<j:
+            if nums[i] >= target:
+                i += 1
+            if nums[j] >= target:
+                j -= 1
+            
+            
+            if nums[i] + nums[j] == target:
+                return [i, j]
+            # still working
+
+
+
 
 if __name__ == '__main__':
     sol = Solution()
-    print(sol.two_sum([3, 7, 8, 10, 4, 5], 9))
+    print(sol.twoSum([3, 7, 8, 10, 4, 5], 9))
 
